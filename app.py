@@ -10,9 +10,9 @@ W = 1920//2
 H = 1080//2
 #pygame.init()
 #display = pygame.display.set_mode((W,H))
-#sdl2.ext.init()
-#window = sdl2.ext.Window("Hello World!", size=(W, H), position=(-500, 500))
-#window.show()
+sdl2.ext.init()
+window = sdl2.ext.Window("Hello World!", size=(W, H), position=(-500, 500))
+window.show()
 
 
 def process_frame(img):
@@ -28,7 +28,7 @@ def process_frame(img):
         u,v = map(lambda x: int(round(x)),p.pt)
         update = cv2.circle(img,(u,v), color=(0,255,0), radius=3)
         cv2.imshow('Update',update)
-        cv2.waitKey(2)
+        cv2.waitKey()
     #print(img.shape)
     #print(img)
     #print(pygame.surfarray.array2d(img))
