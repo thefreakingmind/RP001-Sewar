@@ -15,7 +15,9 @@ feature = FeatureExtractor()
 
 def process_frame(img):
     img = cv2.resize(img ,(W,H))
-    kp, des = feature.extract(img)
+    kp, des, match = feature.extract(img)
+    for m in match:
+        print(m)
     for p in kp:
         u,v = map(lambda x: int(round(x)),p.pt)
         cv2.circle(img, (u,v), color=(255, 0, 0), radius=3)
