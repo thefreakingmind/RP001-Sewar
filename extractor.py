@@ -13,19 +13,34 @@ class FeatureExtractor(object):
         self.last = None
         self.bf = cv2.BFMatcher
 
-    # Extracting Features
+    
     def extract(self, img):
-        feats = cv2.goodFeaturesToTrack(np.mean(img, axis=2).astype(np.uint8), 3000,qualityLevel=0.01, minDistance=3)
-        kps = [cv2.KeyPoint(x=f[0][0],y=f[0][1], _size=20) for f in feats]
+        val = []
+        # Detection 
+        feats = cv2.goodFeaturesToTrack(
+                np.mean(img, axis=2).astype(np.uint8), 
+                3000,qualityLevel=0.01,
+                minDistance=3)
+        
+        # Extraction 
+        kps = [cv2.KeyPoint(x=f[0][0],y=f[0][1], _size=20) 
+                for f in feats]
         kps, des = self.orb.compute(img, kps)
-        matches = self.bf.knnMatch(kps, des, k=2) 
-        last = {'des':des, 'kps':kps}
-            
-        for m in kps:
-            print(m.pt)
-        return kps,des, matches
-
-    def match():
-        pass
+        '''
+        # Matching 
+        matches = None
+        if self.last is not None:
+           matches = self.bf.match(des, self.last['des']) 
+        
+        for m,n in matches:
+            if m.distance < 0.75*n.distance:
+                val.append([m])
+                
+        
+        self.last = {'des':des, 'kps':kps}
+        '''
+        for kp in kps:
+            print(kp.pt)
+        return kps,des
 
 
