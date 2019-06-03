@@ -19,6 +19,7 @@ class Display(object):
             if event.type == sdl2.SDL_QUIT:
                 exit(0)
 
+        
         surf = sdl2.ext.pixels3d(self.window.get_surface())
         surf[:, :, 0:3] = img.swapaxes(0,1)
         self.window.refresh()

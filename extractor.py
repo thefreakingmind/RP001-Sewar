@@ -26,8 +26,16 @@ class FeatureExtractor(object):
         kps = [cv2.KeyPoint(x=f[0][0],y=f[0][1], _size=20) 
                 for f in feats]
         kps, des = self.orb.compute(img, kps)
-        '''
-        # Matching 
+                for kp in kps:
+            print(kp.pt)
+        return kps,des
+
+    
+    def match(self):
+        # Matching
+
+        # TODO Implement Matching Algorithm and Remove
+        # Noise in the Video
         matches = None
         if self.last is not None:
            matches = self.bf.match(des, self.last['des']) 
@@ -38,9 +46,6 @@ class FeatureExtractor(object):
                 
         
         self.last = {'des':des, 'kps':kps}
-        '''
-        for kp in kps:
-            print(kp.pt)
-        return kps,des
 
+        return matches
 
