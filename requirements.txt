@@ -189,7 +189,7 @@ python-jwt==3.2.4
 python-louvain==0.13
 pytz==2018.5
 PyWavelets==0.5.2
-PyYAML==3.12
+PyYAML==5.4
 pyzmq==16.0.3
 qrcode==6.1
 QtAwesome==0.4.4
