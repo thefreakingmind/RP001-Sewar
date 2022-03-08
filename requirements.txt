@@ -81,7 +81,7 @@ h5py==2.7.1
 heapdict==1.0.0
 hexdump==3.3
 html5lib==1.0.1
-httpie==1.0.2
+httpie==3.1.0
 httplib2==0.12.1
 idna==2.6
 imageio==2.2.0
