@@ -118,7 +118,7 @@ marshmallow==2.18.0
 marshmallow-jsonapi==0.21.0
 matplotlib==2.1.2
 mccabe==0.6.1
-mistune==0.8.3
+mistune==2.0.3
 mock==2.0.0
 mongoengine==0.17.0
 mpmath==1.0.0
