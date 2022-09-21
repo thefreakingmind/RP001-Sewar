@@ -185,7 +185,7 @@ PySocks==1.6.7
 pytest==3.3.2
 python-chess==0.24.2
 python-dateutil==2.7.3
-python-jwt==3.2.4
+python-jwt==3.3.4
 python-louvain==0.13
 pytz==2018.5
 PyWavelets==0.5.2
